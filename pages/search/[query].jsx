@@ -38,7 +38,7 @@ export default Search;
 
 export const getServerSideProps = async ({ params }) => {
   const { data } = await axios.get(
-    `${process.env.SERVER_URL}/search/${params.query}`
+    `https://football-strike-server.vercel.app/search/${params.query}`
   );
 
   return {

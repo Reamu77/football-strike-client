@@ -50,7 +50,9 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await axios.get(`${process.env.SERVER_URL}/${params.slug}`);
+  const { data } = await axios.get(
+    `https://football-strike-server.vercel.app/${params.slug}`
+  );
 
   if (!data) {
     return {

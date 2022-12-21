@@ -30,17 +30,20 @@ const mystery = () => {
 
   const handleCheckout = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post(`${process.env.SERVER_URL}/adress`, {
-      product_name: category,
-      size: e.target["size"].value,
-      firstname: e.target["firstname"].value,
-      lastname: e.target["lastname"].value,
-      address: e.target["address"].value,
-      city: e.target["city"].value,
-      zip: e.target["zip"].value,
-      country: e.target["country"].value,
-      department: e.target["department"].value,
-    });
+    const { data } = await axios.post(
+      `https://football-strike-server.vercel.app/adress`,
+      {
+        product_name: category,
+        size: e.target["size"].value,
+        firstname: e.target["firstname"].value,
+        lastname: e.target["lastname"].value,
+        address: e.target["address"].value,
+        city: e.target["city"].value,
+        zip: e.target["zip"].value,
+        country: e.target["country"].value,
+        department: e.target["department"].value,
+      }
+    );
 
     if (data) {
       const res = await axios.post(

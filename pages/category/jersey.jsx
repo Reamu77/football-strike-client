@@ -10,7 +10,9 @@ const jersey = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("http://localhost:5000/api/product/");
+      const { data } = await axios.get(
+        "https://football-strike-server.vercel.app"
+      );
       setProducts(
         data.filter(
           (product) => data.indexOf(product) < 5 && product.category == "jersey"

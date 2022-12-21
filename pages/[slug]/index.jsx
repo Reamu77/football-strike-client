@@ -35,7 +35,7 @@ const Product = ({ product }) => {
 export default Product;
 
 export const getStaticPaths = async () => {
-  const { data } = await axios.get(process.env.SERVER_URL);
+  const { data } = await axios.get("https://football-strike-server.vercel.app");
 
   const paths = data.map((product) => ({
     params: {

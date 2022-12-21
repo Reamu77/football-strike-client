@@ -47,7 +47,7 @@ const mystery = () => {
 
     if (data) {
       const res = await axios.post(
-        process.env.SERVER_URL + "/stripe/" + category
+        "https://football-strike-server.vercel.app" + "/stripe/" + category
       );
 
       window.location.href = res.data.url;
